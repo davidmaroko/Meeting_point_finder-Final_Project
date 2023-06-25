@@ -1,3 +1,4 @@
+import os
 import threading
 import osmnx as ox
 from flask import Flask, jsonify, request
@@ -17,12 +18,14 @@ from finding_optimal_meeting_point.users_data_base import set_users_to_offered, 
 from finding_optimal_meeting_point.connected_system import search_for_coverage, check_connectivity, \
     disconnect_disconnected_nodes, is_within_distance_or_rectangle
 
-path_to_users_data_base = 'C:/Users/dmaro/PycharmProjects/flaskProject/users_data.json'
-# path_to_users_data_base = './users_data.json'
-# path_to_dicts_data_base = './group_data.json'
-path_to_dicts_data_base = 'C:/Users/dmaro/PycharmProjects/flaskProject/group_data.json'
-path_to_minian_data_base = 'C:/Users/dmaro/PycharmProjects/flaskProject/minian_data.json'
-# path_to_minian_data_base = './minian_data.json'
+dir_path = os.path.dirname(os.path.realpath(__file__))
+
+# path_to_users_data_base = 'C:/Users/dmaro/PycharmProjects/flaskProject/users_data.json'
+path_to_users_data_base = dir_path+'/users_data.json'
+path_to_dicts_data_base = dir_path+'/group_data.json'
+# path_to_dicts_data_base = 'C:/Users/dmaro/PycharmProjects/flaskProject/group_data.json'
+# path_to_minian_data_base = 'C:/Users/dmaro/PycharmProjects/flaskProject/minian_data.json'
+path_to_minian_data_base = dir_path+'/minian_data.json'
 
 distance = 4000  # distance from the frame that surrounds a group of people
 border = 500  # how meters away from the most extreme people`s location
@@ -104,6 +107,7 @@ def do_post_new_user():
     point = data.get('point', 'default')
     email = data.get('email', '')
     point = tuple(map(float, point.split(',')))
+    print(path_to_users_data_base)
     if not add_user_to_users({'point': point, 'email': email, 'status': None, 'meeting_point': None},
                              path_to_users_data_base):
         return jsonify({'status': 'you have already previous request'})

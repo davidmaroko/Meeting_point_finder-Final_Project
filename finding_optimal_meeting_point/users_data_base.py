@@ -1,4 +1,5 @@
 import json
+import os
 
 from finding_optimal_meeting_point.local_data_base import users, get_users, append_to_users, restart_users, \
     remove_from_users

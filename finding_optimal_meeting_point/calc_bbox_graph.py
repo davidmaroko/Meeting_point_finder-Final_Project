@@ -1,13 +1,9 @@
-from descartes import PolygonPatch
-import geopandas as gpd
+
 from networkx import NetworkXPointlessConcept
 from osmnx._errors import EmptyOverpassResponse
-from shapely.geometry import Point, LineString, Polygon
-import networkx as nx
+
 import osmnx as ox
-import numpy as np
-import multiprocessing as mp
-import matplotlib.pyplot as plt
+
 import math
 
 
@@ -54,6 +50,7 @@ def return_bbox_from_list(points, meter):
     north, south, east, west = northeastern['latitude'], southwest['latitude'], northeastern['longitude'], southwest[
         'longitude']
     try:
+        print(north, south, east, west)
         G = ox.graph_from_bbox(north, south, east, west, network_type='drive', retain_all=True)
         if G.number_of_edges() == 0:
             return return_bbox_from_list(points, 2 * meter)

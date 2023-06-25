@@ -1,59 +1,61 @@
-import logo from './logo.svg';
 import './App.css';
-// import UserInput from "./components/UserInput";
-// import GetStatus from "./components/GetStatus";
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-// function App() {
-//   return (
-//     <div className="App">
-//      <UserInput/>
-//      <GetStatus/>
-//
-//     </div>
-//   );
-// }
-//
-// export default App;
-import React, {useState} from 'react';
-import './App.css';
-import UserInput from './components/UserInput';
-import GetStatus from './components/GetStatus';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import HomePage from "./components/pages/HomePage";
+import AboutPage from "./components/pages/AboutPage";
+import {Container} from "react-bootstrap";
+import ContactPage from "./components/pages/ContactPage";
+import StatusPage from "./components/pages/StatusPage";
+import React, {useState} from "react";
+import FormComponent from "./components/segments/FormComponent";
+import GetStatus from "./components/segments/GetStatus";
 
 function App() {
-  const [point, setPoint] = useState('');
-  const [number, setNumber] = useState(1);
-  const [useCurrentLocation, setUseCurrentLocation] = useState(false);
-  const [currentLocation, setCurrentLocation] = useState(null);
-  const [status, setStatus] = useState('NOT_REGISTERED');
-
+    const [point, setPoint] = useState('');
+    const [number, setNumber] = useState('');
+    const [useCurrentLocation, setUseCurrentLocation] = useState(false);
+    const [currentLocation, setCurrentLocation] = useState(null);
+    const [status, setStatus] = useState('NOT_REGISTERED');
+    const [meetingPoint, setMeetingPoint] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">Minyan Finder</h1>
-      </header>
-      <div className="App-content">
-        <UserInput setStatus={setStatus}
+    <BrowserRouter>
+        {/*<div style={{ position: 'fixed', width: '100%', zIndex: 1 }}>*/}
+        {/*    <MenuBar  />*/}
+        {/*</div>*/}
+        <Container fluid className="App px-0">
+            <Routes>
+                <Route path="/" element={<HomePage
+                   status={status}
+                   setStatus={setStatus}
                    number={number}
                    setNumber={setNumber}
                    useCurrentLocation={useCurrentLocation}
                    setUseCurrentLocation={setUseCurrentLocation}
                    currentLocation={currentLocation}
                    setCurrentLocation={setCurrentLocation}
-                   point={point} setPoint={setPoint} />
-        <GetStatus status={status}
+                   point={point}
+                   setPoint={setPoint}/>} />
+                <Route path="/status" element={<StatusPage
+                   status={status}
                    setStatus={setStatus}
                    number={number}
                    useCurrentLocation={useCurrentLocation}
                    currentLocation={currentLocation}
-                   point={point} setPoint={setPoint} />
-      </div>
-      <footer className="App-footer">
-        &copy; {new Date().getFullYear()} Minyan Finder.
-      </footer>
-    </div>
+                   point={point} setPoint={setPoint}
+                   meetingPoint={meetingPoint} setMeetingPoint={setMeetingPoint}/>} />
+                <Route path="/about" element={<AboutPage/>} />
+                <Route path="/contact" element={<ContactPage/>} />
+                {/*<Route path="/status" element={<GetStatus*/}
+                {/*   status={status}*/}
+                {/*   setStatus={setStatus}*/}
+                {/*   number={number}*/}
+                {/*   useCurrentLocation={useCurrentLocation}*/}
+                {/*   currentLocation={currentLocation}*/}
+                {/*   point={point} setPoint={setPoint} />} />*/}
+            </Routes>
+        </Container>
+    </BrowserRouter>
   );
 }
 

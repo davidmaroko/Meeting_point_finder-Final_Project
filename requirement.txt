@@ -1,0 +1,7 @@
+osmnx
+flask
+flask-cors
+descartes
+scikit-learn
+matplotlib
+networkx
