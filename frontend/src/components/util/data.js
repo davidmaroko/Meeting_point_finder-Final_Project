@@ -1,1 +1,2 @@
-export const googleMapsApiKey = "AIzaSyBvJoenQ5mqKW5Mdt-fHju2Hnm710qlYMM"; //Google Maps API key
+export const googleMapsApiKey = "your Google Maps API key"
+export const mapBoxApiKey =  'your MapBox API key';

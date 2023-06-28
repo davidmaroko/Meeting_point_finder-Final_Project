@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import { FaMapMarkedAlt, FaCar, FaWhatsapp } from 'react-icons/fa';
+import {mapBoxApiKey} from "./util/data";
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiZGF2aWRtYXIyMzExIiwiYSI6ImNsaWR2MWdzNjAzYXAzaG16MXJvYmk4NDMifQ.CYEcO7xQQ-ROj0-dTxayOg';
-
+mapboxgl.accessToken = mapBoxApiKey
 const MapFrame = ({ point }) => {
   const new_point = { lng: point[1], lat: point[0] };
   const mapContainerRef = useRef(null);
