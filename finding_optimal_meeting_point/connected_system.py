@@ -129,15 +129,10 @@ def disconnect_disconnected_nodes(G, vertex):
     # Find all weakly connected components of the graph
     wcc = nx.weakly_connected_components(G)
 
-    # # Find all strongly connected components of the graph
-    # scc = nx.strongly_connected_components(G)
-
-    # Combine the sets of nodes in the weakly and strongly connected components
     connected_components = set()
     for component in wcc:
         connected_components.add(frozenset(component))
-    # for component in scc:
-    #     connected_components.add(frozenset(component))
+
 
     # Find the connected component containing vertex
     for component in connected_components:
