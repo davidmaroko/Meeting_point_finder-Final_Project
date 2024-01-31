@@ -7,7 +7,7 @@ We also built a rest api server in Python language that uses the system to find 
 The server also deals with the analysis of the geographical proximity between different 
 worshipers and their storage in a way that will shorten the search and comparison times.
 # writed by: David Maroko, Mendel bismut
-# contact us: dmaroko21@gmail.com
+# contact me: dmaroko21@gmail.com
 # run server: 
 pip install -r req .\requirement.txt  
 then:
