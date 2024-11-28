@@ -1,19 +1,14 @@
 # Meeting Point Finder  
-
-**Written by:** David Maroko, Mendel Bismut  
-**Contact:** [dmaroko21@gmail.com](mailto:dmaroko21@gmail.com)  
-
 ---
-
 ## Description  
 
-Meeting Point Finder is a web application designed to help groups of individuals from different locations find the nearest optimal meeting point. The project addresses an optimization of the open NP problem, the **Vertex-k-Center Problem**.  
+Meeting Point Finder is a web application designed to help groups of individuals from different locations find the nearest optimal meeting point. The project addresses an **optimization** of the open NP problem, the **Vertex-k-Center Problem**.  
 
 The application models the map as a graph and performs a search across all graph nodes within the area where the participants are located, identifying the most suitable meeting point.  
 
 This is a full **end-to-end system** built with a **REST API**:  
-- **Back-end:** Developed in Python using Flask.  
-- **Front-end:** Built with React.js.  
+- **Back-end:** Developed in **Python** using **Flask**.  
+- **Front-end:** Built with **React.js**.  
 
 ---
 
@@ -28,31 +23,49 @@ This implementation introduces additional challenges, such as dynamically groupi
 1. Install the required Python dependencies:  
    ```bash
    pip install -r requirements.txt
-or
+   ```
+   or
   ```bash
-  pip install -r req .\requirement.txt  
-## Start the Flask server
+  pip install -r req .\requirement.txt
+```  
+2. Start the Flask server
+```bash
 python app.py
+```
 ## How to Run the Client
-# 1.Set Up API Keys:
-Obtain a Google Maps API key from Google Maps Documentation (https://developers.google.com/maps/documentation/javascript/get-api-key)
-Obtain a Mapbox API key from Mapbox Documentation (https://docs.mapbox.com/help/getting-started/access-tokens/)
+1.Set Up API Keys:
+
+Obtain a Google Maps API key from Google Maps Documentation: https://developers.google.com/maps/documentation/javascript/get-api-key
+
+Obtain a Mapbox API key from Mapbox Documentation: https://docs.mapbox.com/help/getting-started/access-tokens/
+
 Paste both keys into the file:
+```bash
 frontend/src/components/util/data.js
-# 2.Install Dependencies and Run the Client:
+```
+2.Install Dependencies and Run the Client:
 Navigate to the frontend directory:
 ```bash
-cd frontend
+frontend
+```
 Install the required dependencies:
 ```bash
 npm install
+```
 Start the development server:
 ```bash
 npm start
+```
 (or npm run)
-# Open your browser and navigate to:
+# Open your browser and navigate to the front-end adress:
+```bash
 http://localhost:3000
+```
 ## Notes
 Make sure your API keys are valid and have the necessary permissions enabled for the application to work correctly.
-# For any issues, feel free to contact us at the email provided above.
+ 
+---
+**Written by:** David Maroko, Mendel Bismut  
+**Contact:** [dmaroko21@gmail.com](mailto:dmaroko21@gmail.com)  
+For any issues, feel free to contact us at the email provided above.
 
