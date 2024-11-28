@@ -13,7 +13,7 @@ pip install -r req .\requirement.txt
 then:
 python app.py,  
 # run client:
-first you should create a personal keys,
+first you should create a personal API keys,
 to google in  https://developers.google.com/maps/documentation/javascript/get-api-key
 and for map-box in https://docs.mapbox.com/help/getting-started/access-tokens/, 
 and paste them in frontend/src/components/util/data.js.  
