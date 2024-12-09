@@ -1,6 +1,9 @@
 # Meeting Point Finder  
----
-## Description  
+<h4>Current use case: Minyan Finder</h4>
+<img src="demonstration_gif.gif" alt="description" />
+
+
+<h3>Description:</h3>  
 
 Meeting Point Finder is a web application designed to help groups of individuals from different locations find the nearest optimal meeting point. The project addresses an **optimization** of the open NP problem, the **Vertex-k-Center Problem**.  
 
@@ -12,7 +15,7 @@ This is a full **end-to-end system** built with a **REST API**:
 
 ---
 
-### Current Use Case: Finding a Minyan  
+### Current use case: Minyan Finder
 Currently, the front-end (and part of the back-end) is customized for a specific use case: helping individuals find a **Minyan**—a quorum of at least 10 people required for Jewish prayer according to Torah rules.  
 
 This implementation introduces additional challenges, such as dynamically grouping users from random locations worldwide into clusters within reasonable driving distances. For instance, someone in Paris wouldn't travel all the way to London to join a Minyan. The system intelligently assigns users to local clusters to ensure practicality and efficiency.  
