@@ -5,8 +5,7 @@
 
 <h3>Description:</h3>  
 
-Meeting Point Finder is a web application designed to help groups of individuals from different locations find the nearest optimal meeting point. The project addresses an **optimization** of the open NP problem, the **Vertex-k-Center Problem**.  
-
+Meeting Point Finder is a web application designed to help groups of individuals from different locations find the nearest optimal meeting point. The project addresses an **optimization** of the open NP problem, the <a href="https://en.wikipedia.org/wiki/Metric_k-center">Vertex-k-Center Problem (also known as metric k-center)</a>
 The application models the map as a graph and performs a search across all graph nodes within the area where the participants are located, identifying the most suitable meeting point.  
 
 This is a full **end-to-end system** built with a **REST API**:  
