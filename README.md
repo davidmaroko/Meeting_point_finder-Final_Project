@@ -44,12 +44,12 @@ Obtain a Mapbox API key from Mapbox Documentation: https://docs.mapbox.com/help/
 
 Paste both keys into the file:
 ```bash
-frontend/src/components/util/data.js
+frontend-Minian_finder/src/components/util/data.js
 ```
 2.Install Dependencies and Run the Client:
 Navigate to the frontend directory:
 ```bash
-frontend
+frontend-Minian_finder
 ```
 Install the required dependencies:
 ```bash
